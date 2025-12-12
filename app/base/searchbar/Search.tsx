@@ -42,7 +42,7 @@ const Search = () => {
       focus:border-blue-500
       placeholder-gray-500"
         placeholder="Search"
-        aria-label="Search"
+        aria-label="Search. Please write an episode number and season to begin the search"
         onChange={(e) => handleSearch(e.target.value)}
         defaultValue={searchParams.get("query")?.toString()}
       />
@@ -62,7 +62,7 @@ const Search = () => {
       focus:border-blue-500"
         type="submit"
       >
-        <SearchIcon label="submit search"/>
+        <SearchIcon label="submit search" aria-label="Submit search"/>
       </button>
     </form>
   );
