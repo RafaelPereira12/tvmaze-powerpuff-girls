@@ -22,7 +22,7 @@ const Seasons = ({ seasonId, seasonNumber }: SeasonProps) => {
           return (
             <DropdownGroupItem
               key={episode.id}
-              url={`/episode/details/${episode.season}/${episode.number}`}
+              url={`/episode-details/${episode.season}/${episode.number}`}
             >
               <Episode
                 key={episode.id}
