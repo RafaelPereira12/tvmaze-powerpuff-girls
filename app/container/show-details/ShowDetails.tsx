@@ -1,28 +1,36 @@
+"use client"
+
 import Image from "next/image";
+import { getShowDetails } from "./ShowDetailsServerFunctions";
+import { useQuery } from "@tanstack/react-query";
 
-const ShowDetails = async () => {
-  const response = await fetch("https://api.tvmaze.com/shows/1955");
+const ShowDetails = () => {
+   const { isPending, error, data } = useQuery({
+    queryKey: ["show details"],
+    queryFn: () => getShowDetails(),
+  });
+   if (isPending) return "Loading...";
 
-  const showDetails = await response.json();
+  if (error) return "An error has occurred: " + error.message;
   return (
-    <>
+    <section className="display-inline">
       <article tabIndex={0}>
-        <h1 className="sm:text-red">Title: {showDetails.name}</h1>
+        <h1 className="sm:text-red">Title: {data.name}</h1>
       </article>
       <article tabIndex={0}>
         <h1>
-          Description: {showDetails.summary.replace(/(<([^>]+)>)/gi, " ")}
+          Description: {data.summary.replace(/(<([^>]+)>)/gi, " ")}
         </h1>
       </article>
       <Image
-        src={showDetails.image.original}
+        src={data.image.original}
         alt="Show Image"
         aria-label="Series Poster Image"
         tabIndex={0}
-        width={500}
-        height={500} // proper styling please
+        width={200}
+        height={200} // proper styling please
       />
-    </>
+    </section>
   );
 };
 
