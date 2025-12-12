@@ -49,20 +49,21 @@ const Search = () => {
       <button
         className="px-4
       py-2
-      bg-gray-200
-      hover:bg-gray-300
+      bg-[#39d02b]
+      hover:bg-[#6fcf66]
       rounded-r-full
       border
       border-l-0
       border-gray-300
       text-sm
+      text-[#54b845]
        focus:outline-none
       focus:ring-2
       focus:ring-blue-500
       focus:border-blue-500"
         type="submit"
       >
-        <SearchIcon label="submit search" aria-label="Submit search"/>
+        <SearchIcon label="submit search" aria-label="Submit search" size="small"/>
       </button>
     </form>
   );
