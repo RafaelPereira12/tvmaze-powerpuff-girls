@@ -1,9 +1,10 @@
+import EpisodeList from "./EpisodeList"
 
 const EpisodeListPage = () => {
   return (
-    <div>
-      Episode List
-    </div>
+    <main>
+      <EpisodeList />
+    </main>
   )
 }
 
