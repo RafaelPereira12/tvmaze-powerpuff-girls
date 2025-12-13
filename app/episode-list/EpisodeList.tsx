@@ -4,14 +4,13 @@ import DropdownMenu from "../common/DropdownMenu";
 import DropdownGroup from "../common/DropdownGroup";
 import { getSeasons } from "./EpisodeListServerFunctions";
 import { useQuery } from "@tanstack/react-query";
+import { css } from "@emotion/react";
 
 const EpisodeList = () => {
-  const {isPending, error, data} = useQuery(
-    {
-      queryKey: ["seasons"],
-      queryFn: () => getSeasons()
-    }
-  );
+  const { isPending, error, data } = useQuery({
+    queryKey: ["seasons"],
+    queryFn: () => getSeasons(),
+  });
 
   if (isPending) return "Loading...";
 

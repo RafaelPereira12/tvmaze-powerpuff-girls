@@ -25,12 +25,12 @@ const Navbar = () => {
         </li>
         <li className="flex justify-center items-center hover:bg-[#c31e6b] h-full">
           <Link href="/" role="none">
-            <span className="text-[#f9f9f9]">Home</span>
+            <span className="text-[#ffffff]">Home</span>
           </Link>
         </li>
         <li className="flex justify-center items-center mt-0 hover:bg-[#c31e6b] h-full">
           <Link href="/episode/favorites" role="none">
-            <span className="text-[#f9f9f9] font-sans">Favorites</span>
+            <span className="text-[#ffffff] font-sans">Favorites</span>
           </Link>
         </li>
         <li className="flex justify-center items-center">

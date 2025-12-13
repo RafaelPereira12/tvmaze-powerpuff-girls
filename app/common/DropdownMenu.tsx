@@ -4,12 +4,21 @@ import DropdownMenuAtlasKit from "@atlaskit/dropdown-menu";
 
 const DropdownMenu = ({ children, seasonNumber }: DropdownMenuProps) => {
   return (
-    <DropdownMenuAtlasKit
-      trigger={"Season" + seasonNumber}
-      shouldRenderToParent
+    <section
+      className="bg-[#39d02b]
+                  w-fit
+                  rounded-[5px]
+                  text-white
+                  [&>button>span]:text-white
+                  "
     >
-      {children}
-    </DropdownMenuAtlasKit>
+      <DropdownMenuAtlasKit
+        trigger={"Season" + seasonNumber}
+        shouldRenderToParent
+      >
+        {children}
+      </DropdownMenuAtlasKit>
+    </section>
   );
 };
 

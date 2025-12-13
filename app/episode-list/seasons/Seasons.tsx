@@ -15,6 +15,7 @@ const Seasons = ({ seasonId, seasonNumber }: SeasonProps) => {
   if (isPending) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
+
   return (
     <section aria-label={"Season" + seasonNumber + "episode list"}>
       {data &&

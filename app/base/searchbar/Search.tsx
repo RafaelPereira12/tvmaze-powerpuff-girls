@@ -56,7 +56,7 @@ const Search = () => {
       border-l-0
       border-gray-300
       text-sm
-      text-[#54b845]
+      text-[#fffff]
        focus:outline-none
       focus:ring-2
       focus:ring-blue-500
