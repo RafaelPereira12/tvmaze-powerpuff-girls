@@ -12,6 +12,7 @@
     "@atlaskit/css": "^0.17.1",
     "@atlaskit/dropdown-menu": "^16.3.23",
     "@atlaskit/icon": "^29.1.0",
+    "@atlaskit/spinner": "^19.0.7",
     "@tanstack/react-query": "^5.90.12",
     "next": "16.0.10",
     "react": "^18.3.1",
