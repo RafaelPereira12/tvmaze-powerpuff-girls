@@ -17,7 +17,7 @@ const Seasons = ({ seasonId, seasonNumber }: SeasonProps) => {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <section aria-label={"Season" + seasonNumber + "episode list"}>
+    <section aria-label={"Season" + seasonNumber + "episode list"}> {/* markup has to be empty in order for the Atlassian keyboard accessibility to work as intended*/}
       {data &&
         data.map((episode: SeasonEpisodeProps) => {
           return (

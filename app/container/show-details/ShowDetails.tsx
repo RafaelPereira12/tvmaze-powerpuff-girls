@@ -18,7 +18,6 @@ const ShowDetails = () => {
                 grid-cols-[2fr] 
                 sm:grid-cols-[1fr_2fr]
                 md:grid-cols-[1fr_2fr]
-                md:grid-cols-[1fr_2fr]
                 justify-items-center 
                 items-center
                 "
@@ -53,11 +52,15 @@ const ShowDetails = () => {
         >
           Title: {data.name}
         </h1>
-        <h3 className="[font-size:var(--font-size-text-mobile)] 
+        <h3
+          className="[font-size:var(--font-size-text-mobile)] 
                         sm:[font-size:var(--font-size-text-mobile)] 
                         md:[font-size:var(--font-size-text-mobile)] 
                         lg:[font-size:var(--font-size-text)]
-                        ">Description: {data.summary.replace(/(<([^>]+)>)/gi, " ")}</h3>
+                        "
+        >
+          Description: {data.summary.replace(/(<([^>]+)>)/gi, " ")}
+        </h3>
       </article>
     </section>
   );

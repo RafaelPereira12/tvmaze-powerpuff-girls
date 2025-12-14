@@ -1,5 +1,5 @@
 "use client";
-import Seasons from "./seasons/Seasons";
+import Seasons from "../container/seasons/Seasons";
 import DropdownMenu from "../common/DropdownMenu";
 import DropdownGroup from "../common/DropdownGroup";
 import { getSeasons } from "./EpisodeListServerFunctions";
