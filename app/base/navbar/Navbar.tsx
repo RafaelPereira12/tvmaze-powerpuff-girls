@@ -13,7 +13,7 @@ const Navbar = () => {
         items-center
         h-15
         sticky
-        mb-2.5
+        
         w-full
         bg-[#ed0874]
         text-[20px]

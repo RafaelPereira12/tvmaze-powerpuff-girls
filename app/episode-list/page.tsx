@@ -3,10 +3,10 @@ import EpisodeList from "./EpisodeList"
 
 const EpisodeListPage = () => {
   return (
-    <main>
+    <section>
       <ShowDetails />
       <EpisodeList />
-    </main>
+    </section>
   )
 }
 

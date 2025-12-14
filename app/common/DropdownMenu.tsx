@@ -6,10 +6,12 @@ const DropdownMenu = ({ children, seasonNumber }: DropdownMenuProps) => {
   return (
     <section
       className="bg-[#39d02b]
-                  w-fit
+                  h-fit
                   rounded-[5px]
                   text-white
                   [&>button>span]:text-white
+                  m-2
+                  [&_button]:!min-w-0 [&_button]:!w-full
                   "
     >
       <DropdownMenuAtlasKit
