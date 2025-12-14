@@ -17,14 +17,24 @@ const ShowDetails = () => {
       className="grid 
                 grid-cols-[2fr] 
                 sm:grid-cols-[1fr_2fr]
-                md:grid-cols-[2fr_2fr]
-                md:grid-cols-[2fr_2fr]
+                md:grid-cols-[1fr_2fr]
+                md:grid-cols-[1fr_2fr]
                 justify-items-center 
                 items-center
                 "
     >
       <Image
-        className="w-[150px] h-[200px] sm:w-[150px] sm:h-[200px] md:w-[200px] md:h-[300px] lg:w-[200px] lg:h-[300px] rounded-[5px] drop-shadow-lg/50"
+        className="w-[150px] 
+                    h-[200px] 
+                    sm:w-[150px] 
+                    sm:h-[200px] 
+                    md:w-[200px] 
+                    md:h-[300px] 
+                    lg:w-[200px] 
+                    lg:h-[300px] 
+                    rounded-[5px] 
+                    mb-2
+                    drop-shadow-lg/50"
         src={data.image.original}
         alt="Show Image"
         aria-label="Series Poster Image"
@@ -32,11 +42,11 @@ const ShowDetails = () => {
         width={200}
         height={200} // proper styling please
       />
-      <article tabIndex={0}>
+      <article className="self-start justify-items-start" tabIndex={0}>
         <h1
           className="[font-size:var(--font-size-header-mobile)] 
                         sm:[font-size:var(--font-size-header-mobile)] 
-                        md:[font-size:var(--font-size-header)] 
+                        md:[font-size:var(--font-size-header-mobile)] 
                         lg:[font-size:var(--font-size-header)]
                         font-bold
                        "
@@ -45,7 +55,7 @@ const ShowDetails = () => {
         </h1>
         <h3 className="[font-size:var(--font-size-text-mobile)] 
                         sm:[font-size:var(--font-size-text-mobile)] 
-                        md:[font-size:var(--font-size-text)] 
+                        md:[font-size:var(--font-size-text-mobile)] 
                         lg:[font-size:var(--font-size-text)]
                         ">Description: {data.summary.replace(/(<([^>]+)>)/gi, " ")}</h3>
       </article>
