@@ -11,7 +11,7 @@ const Navbar = () => {
       <ul
         className=" grid grid-cols-[1fr_1fr_1fr_8fr]
         items-center
-        h-15
+        h-16
         sticky
         
         w-full

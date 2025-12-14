@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Navbar from "./base/navbar/Navbar";
 import TanstackProvider from "./providers/tanstack-provider";
 import "./globals.css";
+import Footer from "./base/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <TanstackProvider>
           <Navbar />
           {children}
+          <Footer />
         </TanstackProvider>
       </body>
     </html>
