@@ -2,6 +2,7 @@ import Image from "next/image";
 import ImageIcon from "@atlaskit/icon/core/image";
 import { EpisodeProps } from "./EpisodeTypes";
 
+
 const Episode = ({ image, number, name }: EpisodeProps) => {
   return (
     <section
@@ -31,17 +32,20 @@ const Episode = ({ image, number, name }: EpisodeProps) => {
           <ImageIcon label="No image found" />
         )}
       </figure>
+      <section>
+
       <article className="w-fit">
         <h1
           className="[font-size:var(--font-size-dropdown-mobile)] 
-                        sm:[font-size:var(--font-size-text-mobile)] 
-                        md:[font-size:var(--font-size-text-mobile)] 
-                        lg:[font-size:var(--font-size-text)]
-                        "
-        >
+          sm:[font-size:var(--font-size-text-mobile)] 
+          md:[font-size:var(--font-size-text-mobile)] 
+          lg:[font-size:var(--font-size-text)]
+          "
+          >
           Ep. {number} | {name}
         </h1>
       </article>
+          </section>
     </section>
   );
 };

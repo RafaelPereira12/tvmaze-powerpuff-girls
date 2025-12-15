@@ -39,7 +39,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="flex justify-center items-center mt-0 hover:bg-[#c31e6b] h-full row-span-1 col-span-1 sm:col-span-1 md:row-span-1 md:col-span-1 lg:row-span-1 lg:col-span-1">
-          <Link href="/episode/favorites" role="none">
+          <Link href="/favorites" role="none">
             <span className="text-[#ffffff] font-sans">Favorites</span>
           </Link>
         </li>

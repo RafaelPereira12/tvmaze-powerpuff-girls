@@ -6,6 +6,7 @@ import { EpisodeDetailsProps } from "./EpisodeDetailsTypes";
 import { useQuery } from "@tanstack/react-query";
 import { getEpisodeDetails } from "./EpisodeDetailsServerFunctions";
 import Spinner from "@atlaskit/spinner";
+import AddToFavoritesButton from "../common/add-to-favorites-button/AddToFavoritesButton";
 
 const EpisodeDetails = ({ season, number }: EpisodeDetailsProps) => {
   const { isPending, error, data } = useQuery({
@@ -44,36 +45,44 @@ const EpisodeDetails = ({ season, number }: EpisodeDetailsProps) => {
               aria-label="Episode Thumbnail Image"
               tabIndex={0}
               width={500}
-              height={500} //change this to proper styling
+              height={500}
             />
           ) : (
             <ImageIcon aria-label="No Image" label="No Image" />
           )}
-          <article
-            className="flex row-span-1 cols-span-1 w-full h-fit"
-            tabIndex={0}
-          >
-            <h3
-              className="[font-size:var(--font-size-text-mobile)] 
-                        sm:[font-size:var(--font-size-text-mobile)] 
-                        md:[font-size:var(--font-size-text)] 
-                        lg:[font-size:var(--font-size-text)
-                        font-bold
-                        mr-2
-                       "
-            >
-              Title:
-            </h3>
-            <h3
-              className="[font-size:var(--font-size-text-mobile)] 
-                        sm:[font-size:var(--font-size-text-mobile)] 
-                        md:[font-size:var(--font-size-text)] 
-                        lg:[font-size:var(--font-size-text)]
-                        "
-            >
-              {data.name}
-            </h3>
-          </article>
+          <section className="flex justify-end row-span-1 cols-span-1 w-full h-fit">
+             <AddToFavoritesButton
+              id={data.id}
+              image={data.image}
+              name={data.name}
+              number={data.number}
+              season={season}
+            />
+          </section>
+            <article className="flex row-span-1 cols-span-1 w-full h-fit" tabIndex={0}>
+              <h3
+                className="[font-size:var(--font-size-text-mobile)] 
+              sm:[font-size:var(--font-size-text-mobile)] 
+              md:[font-size:var(--font-size-text)] 
+              lg:[font-size:var(--font-size-text)
+              font-bold
+              mr-2
+              "
+              >
+                Title:
+              </h3>
+              <h3
+                className="[font-size:var(--font-size-text-mobile)] 
+              sm:[font-size:var(--font-size-text-mobile)] 
+              md:[font-size:var(--font-size-text)] 
+              lg:[font-size:var(--font-size-text)]
+              "
+              >
+                {data.name}
+              </h3>
+            </article>
+           
+
           <article
             className="flex row-span-1 cols-span-1 w-full h-fit"
             tabIndex={0}

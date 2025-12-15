@@ -8,7 +8,6 @@ import { useQuery } from "@tanstack/react-query";
 import { getEpisodes } from "./SeasonsServerFunctions";
 
 const Seasons = ({ seasonId }: SeasonProps) => {
-  console.log('seasonId: ', seasonId);
   const { isPending, error, data } = useQuery({
     queryKey: ["episodes"],
     queryFn: () => getEpisodes(seasonId),
