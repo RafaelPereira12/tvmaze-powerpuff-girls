@@ -24,7 +24,7 @@ const EpisodeList = () => {
                         lg:grid-cols-[1fr_1fr_1fr] 
                         w-full 
                         justify-between 
-                        items-center 
+                        items-start 
                         p-4"
     >
       {data &&

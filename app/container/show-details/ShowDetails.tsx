@@ -23,7 +23,6 @@ const ShowDetails = () => {
                 items-center
                 "
     >
-      <Spinner testId="spinner" interactionName="load" label="Loading" />
       <Image
         className="w-[150px] 
                     h-[200px] 

@@ -4,26 +4,46 @@ import { EpisodeProps } from "./EpisodeTypes";
 
 const Episode = ({ image, number, name }: EpisodeProps) => {
   return (
-    <section  aria-label={"Episode" + number + name + ","}>
-      {image ? (
-        <Image
-          src={image.medium}
-          alt="Episode Image"
-          width={500}
-          height={500}
-        />
-      ) : (
-        <ImageIcon label="No Image" />
-      )}
-      <article>
-        <h1>
+    <section
+      aria-label={`Episode number + name + ",`}
+      className="grid
+                 grid-cols-[1fr]
+                 grid-rows-[fr_1fr]
+                 sm:grid-cols-[2fr_4fr]
+                 md:grid-cols-[2fr_4fr]
+                 md:grid-rows-1
+                 h-[150px]
+                 md:h-[100px]
+                 text-black
+                 hover:text-[#ed0874]
+                "
+    >
+      <figure className="flex justify-center items-center">
+        {image ? (
+          <Image
+            src={image.medium}
+            alt="Episode Image"
+            className="rounded-[5px] mr-6"
+            width={175}
+            height={175}
+          />
+        ) : (
+          <ImageIcon label="No image found" />
+        )}
+      </figure>
+      <article className="w-fit">
+        <h1
+          className="[font-size:var(--font-size-dropdown-mobile)] 
+                        sm:[font-size:var(--font-size-text-mobile)] 
+                        md:[font-size:var(--font-size-text-mobile)] 
+                        lg:[font-size:var(--font-size-text)]
+                        "
+        >
           Ep. {number} | {name}
         </h1>
       </article>
     </section>
   );
 };
-
-
 
 export default Episode;
