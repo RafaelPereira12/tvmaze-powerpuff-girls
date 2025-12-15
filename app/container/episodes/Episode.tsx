@@ -23,7 +23,7 @@ const Episode = ({ image, number, name }: EpisodeProps) => {
           <Image
             src={image.medium}
             alt="Episode Image"
-            className="rounded-[5px] mr-6"
+            className="rounded-[5px] md:mr-6"
             width={175}
             height={175}
           />

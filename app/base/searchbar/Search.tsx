@@ -1,50 +1,57 @@
 "use client";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-import { useDebouncedCallback } from "use-debounce";
-import SearchIcon from '@atlaskit/icon/core/search';
+import { useRouter } from "next/navigation";
+import {useState } from "react";
+import SearchIcon from "@atlaskit/icon/core/search";
 
 const Search = () => {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+  const [search, setSearch] = useState("");
   const router = useRouter();
 
-  const handleSearch = useDebouncedCallback((term: string) => {
-    const params = new URLSearchParams(searchParams);
-    if (term) {
-      params.set("query", term);
-    } else {
-      params.delete("query");
-    }
-    router.replace(`${pathname}?${params.toString()}`);
-  }, 120);
+  const handleChange = (searchInput: string) => {
+    setSearch(searchInput);
+  };
 
-  useEffect(() => {
-    router.replace(pathname);
-  }, [pathname, router]);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const retrievedNumbers = retrieveNumbersFromSearch(search);
+    const season = retrievedNumbers[0];
+    const episode = retrievedNumbers[1];
+    router.push(`/search-result/${season}/${episode}`);
+  };
+
+  const retrieveNumbersFromSearch = (searchString: string) => {
+    const retrieveNumbers = searchString.match(/\d+/g);
+    if (!retrieveNumbers) return [];
+    return retrieveNumbers;
+  };
+
 
   return (
-    <form className="flex items-center w-full max-w-md mx-auto">
+    <form
+      className="flex items-center w-full max-w-md mx-auto"
+      onSubmit={handleSubmit}
+    >
       <input
         type="search"
         className="flex-1
-      px-4
-      py-2
-      rounded-l-full
-      border
-      border-gray-300
-      bg-gray-100
-      text-sm
-      focus:outline-none
-      focus:ring-2
-      focus:ring-blue-500
-      focus:border-blue-500
-      placeholder-gray-500"
-        placeholder="Search"
-        aria-label="Search. Please write an episode number and season to begin the search"
-        onChange={(e) => handleSearch(e.target.value)}
-        defaultValue={searchParams.get("query")?.toString()}
+                    px-4
+                    py-2
+                    rounded-l-full
+                    border
+                    border-gray-300
+                    bg-gray-100
+                    text-sm
+                    text-black
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-blue-500
+                    focus:border-blue-500
+                    placeholder-gray-300"
+        placeholder="Example: Season 2 Episode 7"
+        aria-label="Search. Please write an episode number and season to begin the search. Example: Season 2 Episode 7"
+        onChange={(e) => handleChange(e.target.value)}
+        value={search}
       />
       <button
         className="px-4
@@ -63,7 +70,11 @@ const Search = () => {
       focus:border-blue-500"
         type="submit"
       >
-        <SearchIcon label="submit search" aria-label="Submit search" size="small"/>
+        <SearchIcon
+          label="submit search"
+          aria-label="Submit search"
+          size="small"
+        />
       </button>
     </form>
   );

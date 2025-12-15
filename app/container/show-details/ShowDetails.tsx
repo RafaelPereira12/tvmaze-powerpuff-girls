@@ -10,7 +10,8 @@ const ShowDetails = () => {
     queryKey: ["show details"],
     queryFn: () => getShowDetails(),
   });
-  if (isPending) return <Spinner testId="spinner" interactionName="load" label="Loading" />;
+  if (isPending)
+    return <Spinner testId="spinner" interactionName="load" label="Loading" />;
 
   if (error) return "An error has occurred: " + error.message;
   return (
@@ -23,8 +24,9 @@ const ShowDetails = () => {
                 items-center
                 "
     >
-      <Image
-        className="w-[150px] 
+      {data.image?.original && (
+        <Image
+          className="w-[150px] 
                     h-[200px] 
                     sm:w-[150px] 
                     sm:h-[200px] 
@@ -35,13 +37,14 @@ const ShowDetails = () => {
                     rounded-[5px] 
                     mb-2
                     drop-shadow-lg/50"
-        src={data.image.original}
-        alt="Show Image"
-        aria-label="Series Poster Image"
-        tabIndex={0}
-        width={200}
-        height={200} // proper styling please
-      />
+          src={data.image.original}
+          alt="Show Image"
+          aria-label="Series Poster Image"
+          tabIndex={0}
+          width={200}
+          height={200} // proper styling please
+        />
+      )}
       <article className="self-start justify-items-start" tabIndex={0}>
         <h1
           className="[font-size:var(--font-size-header-mobile)] 

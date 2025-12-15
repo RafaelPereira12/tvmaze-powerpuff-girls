@@ -12,7 +12,9 @@ const EpisodeDetails = ({ season, number }: EpisodeDetailsProps) => {
     queryKey: ["show details"],
     queryFn: () => getEpisodeDetails(season, number),
   });
-  if (isPending) return <Spinner testId="spinner" interactionName="load" label="Loading" />;
+
+  if (isPending)
+    return <Spinner testId="spinner" interactionName="load" label="Loading" />;
 
   if (error) return "An error has occurred: " + error.message;
   return (
@@ -98,10 +100,7 @@ const EpisodeDetails = ({ season, number }: EpisodeDetailsProps) => {
             </h3>
           </article>
 
-          <article
-            className="row-span-3 cols-span-1 w-full h-fit"
-            tabIndex={0}
-          >
+          <article className="row-span-3 cols-span-1 w-full h-fit" tabIndex={0}>
             <h3
               className="[font-size:var(--font-size-text-mobile)] 
                         sm:[font-size:var(--font-size-text-mobile)] 

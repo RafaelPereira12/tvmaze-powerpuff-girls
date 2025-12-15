@@ -7,7 +7,7 @@ const Footer = () => {
                     h-10 
                     md:h-15
                     w-full
-                    fixed 
+                   
                     bottom-0">
       <h3 className="
                     [font-size:var(--font-size-text-mobile)] 

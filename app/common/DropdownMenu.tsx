@@ -12,7 +12,6 @@ const DropdownMenu = ({ children, seasonNumber }: DropdownMenuProps) => {
                   [&_button_svg]:text-current
                   [&_button]:!min-w-0 
                   [&_button]:!w-full
-                 
                   [&_[role='menu']_[role='group']]:max-h-[300px]
                   [&_[role='menu']_[role='group']]:mb:6
                   [&_[role='menu']_[role='group']]:overflow-y-auto
