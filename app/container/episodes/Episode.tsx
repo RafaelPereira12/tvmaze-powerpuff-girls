@@ -6,7 +6,7 @@ import { EpisodeProps } from "./EpisodeTypes";
 const Episode = ({ image, number, name }: EpisodeProps) => {
   return (
     <section
-      aria-label={`Episode number + name + ",`}
+    // aria-label={`Episode ${number} ${name}`}
       className="grid
                  grid-cols-[1fr]
                  grid-rows-[fr_1fr]
@@ -19,7 +19,7 @@ const Episode = ({ image, number, name }: EpisodeProps) => {
                  hover:text-[#ed0874]
                 "
     >
-      <figure className="flex justify-center items-center">
+      <figure className="flex justify-center items-center" aria-hidden="true">
         {image ? (
           <Image
             src={image.medium}
@@ -34,13 +34,14 @@ const Episode = ({ image, number, name }: EpisodeProps) => {
       </figure>
       <section>
 
-      <article className="w-fit">
+      <article className="w-fit" >
         <h1
           className="[font-size:var(--font-size-dropdown-mobile)] 
           sm:[font-size:var(--font-size-text-mobile)] 
           md:[font-size:var(--font-size-text-mobile)] 
           lg:[font-size:var(--font-size-text)]
           "
+          aria-hidden="true"
           >
           Ep. {number} | {name}
         </h1>

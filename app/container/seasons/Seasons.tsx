@@ -27,6 +27,7 @@ const Seasons = ({ seasonId }: SeasonProps) => {
             <DropdownGroupItem
               key={episode.id}
               url={`/episode-details/${episode.season}/${episode.number}`}
+              label={`Episode ${episode.number} ${episode.name}`}
             >
               <Episode
                 key={episode.id}

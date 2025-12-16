@@ -8,5 +8,15 @@
     "name": "Dream Scheme / You Snooze You Lose",
     "number": 5,
     "season": 2
+  },
+  {
+    "id": 160197,
+    "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_landscape/238/596322.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/238/596322.jpg"
+    },
+    "name": "A Very Special Blossom / Daylight Savings",
+    "number": 7,
+    "season": 2
   }
 ]

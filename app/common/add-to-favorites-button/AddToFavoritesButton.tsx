@@ -44,8 +44,9 @@ const AddToFavoritesButton = ({
       <button
         onClick={() => mutation.mutate(episode)}
         className="flex hover:cursor-pointer"
+        aria-label="Remove Episode From Favorites"
       >
-        <article className="flex justify-center items-center text-[#ed0874] md:scale-200 mr-2">
+        <article className="flex justify-center items-center text-[#ed0874] md:scale-200 mr-2" aria-hidden="true">
           <StarStarredIcon
             spacing="spacious"
             label="Remove episode from favorites"
@@ -57,6 +58,7 @@ const AddToFavoritesButton = ({
                         md:[font-size:var(--font-size-text-mobile)] 
                         lg:[font-size:var(--font-size-text-mobile)]
                         "
+                        aria-hidden="true"
         >
           Remove from favorites
         </h3>
@@ -67,8 +69,9 @@ const AddToFavoritesButton = ({
     <button
       onClick={() => mutation.mutate(episode)}
       className="flex hover:cursor-pointer"
+      aria-label="Add Episode to Favorites"
     >
-      <article className="flex justify-center items-center md:scale-200 mr-2">
+      <article className="flex justify-center items-center md:scale-200 mr-2 " aria-hidden="true">
         <StarUnstarredIcon
           spacing="spacious"
           label="Add episode to favorites"
@@ -80,6 +83,7 @@ const AddToFavoritesButton = ({
                         md:[font-size:var(--font-size-text-mobile)] 
                         lg:[font-size:var(--font-size-text-mobile)]
                         "
+                        aria-hidden="true"
       >
         Add to favorites
       </h3>

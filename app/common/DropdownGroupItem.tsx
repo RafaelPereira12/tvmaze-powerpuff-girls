@@ -2,11 +2,11 @@
 import { DropdownItem } from "@atlaskit/dropdown-menu";
 import { useRouter } from "next/navigation";
 
-const DropdownGroupItem = ({ children, url }: AtlasDropdownItemProps) => {
+const DropdownGroupItem = ({ children, url, label }: AtlasDropdownItemProps) => {
   const router = useRouter();
   return (
     <>
-      <DropdownItem onClick={() => router.push(url)}>{children}</DropdownItem>
+      <DropdownItem aria-label={label} onClick={() => router.push(url)}>{children}</DropdownItem>
     </>
   );
 };
@@ -14,6 +14,7 @@ const DropdownGroupItem = ({ children, url }: AtlasDropdownItemProps) => {
 type AtlasDropdownItemProps = {
   children: React.ReactNode;
   url: string;
+  label: string;
 };
 
 export default DropdownGroupItem;

@@ -29,7 +29,7 @@ const SearchResultTable = ({ seasonNumber }: SearchResultProps) => {
             <Link
               href={`/episode-details/${episode.season}/${episode.number}`}
               key={episode.id}
-              
+              aria-label={`Episode ${episode.number} ${episode.name}`}
               >
               <Episode
                 key={episode.id}

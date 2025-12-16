@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {useState } from "react";
+import { useState } from "react";
 import SearchIcon from "@atlaskit/icon/core/search";
 
 const Search = () => {
@@ -26,7 +26,6 @@ const Search = () => {
     return retrieveNumbers;
   };
 
-
   return (
     <form
       className="flex items-center w-full max-w-md mx-auto"
@@ -49,7 +48,7 @@ const Search = () => {
                     focus:border-blue-500
                     placeholder-gray-300"
         placeholder="Example: Season 2 Episode 7"
-        aria-label="Search. Please write an episode number and season to begin the search. Example: Season 2 Episode 7"
+        aria-label="Search, Please write an episode number and season to begin the search, Example: Season 2 Episode 7"
         onChange={(e) => handleChange(e.target.value)}
         value={search}
       />
@@ -69,12 +68,9 @@ const Search = () => {
       focus:ring-blue-500
       focus:border-blue-500"
         type="submit"
+        aria-label="Submit search"
       >
-        <SearchIcon
-          label="submit search"
-          aria-label="Submit search"
-          size="small"
-        />
+        <SearchIcon label="submit search" size="small" />
       </button>
     </form>
   );
