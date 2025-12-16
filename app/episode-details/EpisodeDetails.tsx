@@ -52,9 +52,16 @@ const EpisodeDetails = ({ season, number }: EpisodeDetailsProps) => {
               height={500}
             />
           ) : (
+            <figure className="row-span-5 
+                        cols-span-1 
+                        rounded-[5px] 
+                        mb-6
+                        md:mr-6
+                        drop-shadow-lg/50">
             <ImageIcon aria-label="No Image" label="No Image" />
+            </figure>
           )}
-          <section className="flex justify-end row-span-1 cols-span-1 w-full h-fit">
+          <section className="flex justify-center lg:justify-end row-span-1 cols-span-1 w-full h-fit">
             <AddToFavoritesButton
               id={data.id}
               image={data.image}

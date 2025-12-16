@@ -8,6 +8,7 @@ import StarStarredIcon from "@atlaskit/icon/core/star-starred";
 import StarUnstarredIcon from "@atlaskit/icon/core/star-unstarred";
 import Spinner from "@atlaskit/spinner";
 import { useState } from "react";
+import Button from "@atlaskit/button/new";
 
 const AddToFavoritesButton = ({
   id,
@@ -56,13 +57,23 @@ const AddToFavoritesButton = ({
 
   if (isFavorite)
     return (
-      <section>
-        <button
+      <section
+        className="[&_span:first-child]:text-[#ed0874] 
+                          [&_button]:!bg-[#f3f5f3] 
+                          [&_span]:[font-size:var(--font-size-dropdown-mobile)!important] 
+                          [&_span]:[sm:[font-size:var(--font-size-dropdown-mobile)!important] 
+                          [&_span]:[md:[font-size:var(--font-size-text-mobile)!important] 
+                          [&_span]:[lg:[font-size:var(--font-size-text-mobile)!important]
+                          mb-6
+                          lg:mb-0
+                          "
+      >
+        <Button
           onClick={() => handleOnClick()}
-          className="flex hover:cursor-pointer"
           aria-label="Remove Episode From Favorites"
+          iconBefore={StarStarredIcon}
         >
-          <article
+          {/* <article
             className="flex justify-center items-center text-[#ed0874] md:scale-200 mr-2"
             aria-hidden="true"
           >
@@ -70,18 +81,17 @@ const AddToFavoritesButton = ({
               spacing="spacious"
               label="Remove episode from favorites"
             />
-          </article>
-          <h3
+          </article> */}
+          {/* <h3
             className="[font-size:var(--font-size-dropdown-mobile)] 
           sm:[font-size:var(--font-size-dropdown-mobile)] 
           md:[font-size:var(--font-size-text-mobile)] 
           lg:[font-size:var(--font-size-text-mobile)]
           "
             aria-hidden="true"
-          >
-            Remove from favorites
-          </h3>
-        </button>
+          > */}
+          Remove from favorites
+        </Button>
         <article aria-live="polite" aria-atomic="true" className="sr-only">
           {announcement}
         </article>
@@ -89,13 +99,20 @@ const AddToFavoritesButton = ({
     );
 
   return (
-    <section>
-      <button
+    <section
+      className="[&_button]:!bg-[#f3f5f3] 
+              [&_span]:!font-size:var(--font-size-dropdown-mobile)] 
+              [&_span]:!sm:[font-size:var(--font-size-dropdown-mobile)] 
+              [&_span]:!md:[font-size:var(--font-size-text-mobile)] 
+              [&_span]:!lg:[font-size:var(--font-size-text-mobile)]
+              "
+    >
+      <Button
         onClick={() => handleOnClick()}
-        className="flex hover:cursor-pointer"
         aria-label="Add Episode to Favorites"
+        iconBefore={StarUnstarredIcon}
       >
-        <article
+        {/* <article
           className="flex justify-center items-center md:scale-200 mr-2 "
           aria-hidden="true"
         >
@@ -111,13 +128,13 @@ const AddToFavoritesButton = ({
         lg:[font-size:var(--font-size-text-mobile)]
         "
           aria-hidden="true"
-        >
-          Add to favorites
-        </h3>
-      </button>
-       <article aria-live="polite" aria-atomic="true" className="sr-only">
-          {announcement}
-        </article>
+        > */}
+        Add to favorites
+        {/* </h3> */}
+      </Button>
+      <article aria-live="polite" aria-atomic="true" className="sr-only">
+        {announcement}
+      </article>
     </section>
   );
 };
