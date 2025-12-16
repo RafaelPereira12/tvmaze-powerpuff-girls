@@ -73,23 +73,6 @@ const AddToFavoritesButton = ({
           aria-label="Remove Episode From Favorites"
           iconBefore={StarStarredIcon}
         >
-          {/* <article
-            className="flex justify-center items-center text-[#ed0874] md:scale-200 mr-2"
-            aria-hidden="true"
-          >
-            <StarStarredIcon
-              spacing="spacious"
-              label="Remove episode from favorites"
-            />
-          </article> */}
-          {/* <h3
-            className="[font-size:var(--font-size-dropdown-mobile)] 
-          sm:[font-size:var(--font-size-dropdown-mobile)] 
-          md:[font-size:var(--font-size-text-mobile)] 
-          lg:[font-size:var(--font-size-text-mobile)]
-          "
-            aria-hidden="true"
-          > */}
           Remove from favorites
         </Button>
         <article aria-live="polite" aria-atomic="true" className="sr-only">
@@ -112,25 +95,7 @@ const AddToFavoritesButton = ({
         aria-label="Add Episode to Favorites"
         iconBefore={StarUnstarredIcon}
       >
-        {/* <article
-          className="flex justify-center items-center md:scale-200 mr-2 "
-          aria-hidden="true"
-        >
-          <StarUnstarredIcon
-            spacing="spacious"
-            label="Add episode to favorites"
-          />
-        </article>
-        <h3
-          className="[font-size:var(--font-size-dropdown-mobile)] 
-        sm:[font-size:var(--font-size-dropdown-mobile)] 
-        md:[font-size:var(--font-size-text-mobile)] 
-        lg:[font-size:var(--font-size-text-mobile)]
-        "
-          aria-hidden="true"
-        > */}
         Add to favorites
-        {/* </h3> */}
       </Button>
       <article aria-live="polite" aria-atomic="true" className="sr-only">
         {announcement}

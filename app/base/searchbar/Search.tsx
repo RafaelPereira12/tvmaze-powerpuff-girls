@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import SearchIcon from "@atlaskit/icon/core/search";
+import { retrieveNumbersFromSearch } from "@/app/utils/SearchUtils";
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -20,11 +21,7 @@ const Search = () => {
     router.push(`/search-result/${season}/${episode}`);
   };
 
-  const retrieveNumbersFromSearch = (searchString: string) => {
-    const retrieveNumbers = searchString.match(/\d+/g);
-    if (!retrieveNumbers) return [];
-    return retrieveNumbers;
-  };
+  
 
   return (
     <form

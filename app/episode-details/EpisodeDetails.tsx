@@ -4,7 +4,7 @@ import Image from "next/image";
 import ImageIcon from "@atlaskit/icon/core/image";
 import { EpisodeDetailsProps } from "./EpisodeDetailsTypes";
 import { useQuery } from "@tanstack/react-query";
-import { getEpisodeDetails } from "./EpisodeDetailsServerFunctions";
+import { getEpisodeDetails } from "../utils/EpisodeDetailsUtils";
 import Spinner from "@atlaskit/spinner";
 import AddToFavoritesButton from "../common/add-to-favorites-button/AddToFavoritesButton";
 
