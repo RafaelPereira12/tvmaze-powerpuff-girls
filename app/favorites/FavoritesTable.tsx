@@ -9,16 +9,20 @@ import Spinner from "@atlaskit/spinner";
 
 const FavoritesTable = () => {
   const { isPending, error, data } = useQuery({
-      queryKey: ["favorites"],
-      queryFn: () => getFavorites(),
-    });
+    queryKey: ["favorites"],
+    queryFn: () => getFavorites(),
+  });
 
   if (isPending)
-    return <Spinner testId="spinner" interactionName="load" label="Loading" />;
+    return (
+      <section aria-hidden="true">
+        <Spinner testId="spinner" interactionName="load" label="Loading" />;
+      </section>
+    );
 
   if (error) return "An error has occurred: " + error.message;
 
-  if(data.length === 0) return <h5>Add episodes to your favorites list</h5>
+  if (data.length === 0) return <h5>Add episodes to your favorites list</h5>;
   return (
     <section className="flow-col bg-gray-100 w-[100%] md:w-[80%] p-6 rounded-[5px] [&_article]:justify-center items-end">
       {data.map((episode: SeasonEpisodeProps) => {

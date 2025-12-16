@@ -12,12 +12,18 @@ const EpisodeList = () => {
     queryFn: () => getSeasons(),
   });
 
-  if (isPending) return <Spinner testId="spinner" interactionName="load" label="Loading" />;
+  if (isPending)
+    return (
+      <section aria-hidden="true">
+        <Spinner testId="spinner" interactionName="load" label="Loading" />;
+      </section>
+    );
 
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <section className="grid 
+    <section
+      className="grid 
                         grid-cols-[1fr] 
                         sm:grid-cols-[1fr_1fr] 
                         md:grid-cols-[1fr_1fr] 

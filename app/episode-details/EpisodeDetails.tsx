@@ -15,7 +15,11 @@ const EpisodeDetails = ({ season, number }: EpisodeDetailsProps) => {
   });
 
   if (isPending)
-    return <Spinner testId="spinner" interactionName="load" label="Loading" />;
+    return (
+      <section aria-hidden="true">
+        <Spinner testId="spinner" interactionName="load" label="Loading" />;
+      </section>
+    );
 
   if (error) return "An error has occurred: " + error.message;
   return (

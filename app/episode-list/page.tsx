@@ -1,4 +1,3 @@
-import SearchResult from "../container/search-result/SearchResult"
 import ShowDetails from "../container/show-details/ShowDetails"
 import EpisodeList from "./EpisodeList"
 
