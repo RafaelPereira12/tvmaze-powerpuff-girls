@@ -24,7 +24,7 @@ const Navbar = () => {
                     sticky
                     mb-2.5
                     w-full
-                    bg-[#ed0874]
+                    bg-[var(--color-pink)]
                     text-[20px]
                     px-2
                     "

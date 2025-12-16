@@ -16,7 +16,7 @@ const Episode = ({ image, number, name }: EpisodeProps) => {
                  h-[150px]
                  md:h-[100px]
                  text-black
-                 hover:text-[#ed0874]
+                 hover:text-[var(--color-pink)]
                 "
     >
       <figure className="flex justify-center items-center" aria-hidden="true">

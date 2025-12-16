@@ -58,7 +58,7 @@ const AddToFavoritesButton = ({
   if (isFavorite)
     return (
       <section
-        className="[&_span:first-child]:text-[#ed0874] 
+        className="[&_span:first-child]:text-[var(--color-pink)] 
                           [&_button]:!bg-[#f3f5f3] 
                           [&_span]:[font-size:var(--font-size-dropdown-mobile)!important] 
                           [&_span]:[sm:[font-size:var(--font-size-dropdown-mobile)!important] 

@@ -52,7 +52,7 @@ const Search = () => {
       <button
         className="px-4
       py-2
-      bg-[#39d02b]
+      bg-[var(--color-green)]
       hover:bg-[#6fcf66]
       rounded-r-full
       border
