@@ -1,13 +1,10 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { createFavorite, getFavorites } from "../../utils/FavoritesUtils";
+import {useQueryClient } from "@tanstack/react-query";
 import { AddToFavoriteProps } from "./AddToFavoritesTypes";
 import StarStarredIcon from "@atlaskit/icon/core/star-starred";
 import StarUnstarredIcon from "@atlaskit/icon/core/star-unstarred";
-import Spinner from "@atlaskit/spinner";
 import { useState } from "react";
 import Button from "@atlaskit/button/new";
 import { useGlobalContext } from "@/app/context/GlobalContext";
-import { SeasonEpisodeProps } from "@/app/container/seasons/SeasonsTypes";
 
 const AddToFavoritesButton = ({
   id,
