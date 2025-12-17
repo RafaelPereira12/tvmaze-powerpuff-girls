@@ -4,7 +4,6 @@ import { EpisodeProps } from "./EpisodeTypes";
 
 
 const Episode = ({ image, number, name }: EpisodeProps) => {
-  console.log('image: ', image);
   return (
     <section
       className="grid

@@ -17,7 +17,6 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
 
   const AddToFavorites = (favoriteEpisode: AddToFavoriteProps) => {
     setFavorites((favorites) => [...favorites, favoriteEpisode]);
-    console.log("favorites: ", favorites);
   };
 
   const DeleteFromFavorites = (favoriteEpisode: AddToFavoriteProps) => {
