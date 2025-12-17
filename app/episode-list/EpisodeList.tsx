@@ -2,7 +2,7 @@
 import Seasons from "../container/seasons/Seasons";
 import DropdownMenu from "../common/DropdownMenu";
 import DropdownGroup from "../common/DropdownGroup";
-import { getSeasons } from "./EpisodeListServerFunctions";
+import { getSeasons } from "../utils/EpisodeListUtils";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "@atlaskit/spinner";
 

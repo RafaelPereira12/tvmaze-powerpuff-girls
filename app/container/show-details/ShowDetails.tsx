@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { getShowDetails } from "./ShowDetailsServerFunctions";
+import { getShowDetails } from "../../utils/ShowDetailsUtils";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "@atlaskit/spinner";
 

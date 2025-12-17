@@ -3,7 +3,7 @@
 import { SeasonEpisodeProps } from "../container/seasons/SeasonsTypes";
 import Link from "next/link";
 import Episode from "../container/episodes/Episode";
-import { getFavorites } from "./FavoritesServerFunctions";
+import { getFavorites } from "../utils/FavoritesUtils";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "@atlaskit/spinner";
 

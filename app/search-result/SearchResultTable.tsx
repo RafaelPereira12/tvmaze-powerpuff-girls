@@ -1,6 +1,6 @@
 "use client";
 
-import { getEpisodes } from "../container/seasons/SeasonsServerFunctions";
+import { getEpisodes } from "../utils/SeasonsUtils";
 import { SearchResultProps } from "./SearchResultTypes";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "@atlaskit/spinner";
