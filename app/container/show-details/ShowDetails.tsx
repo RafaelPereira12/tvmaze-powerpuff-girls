@@ -28,7 +28,7 @@ const ShowDetails = () => {
                 items-center
                 "
     >
-      {data.image?.original && (
+      {data.image.original && (
         <Image
           className="w-[150px] 
                     h-[200px] 
