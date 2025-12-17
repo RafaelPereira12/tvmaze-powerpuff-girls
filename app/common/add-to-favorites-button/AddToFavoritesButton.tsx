@@ -36,7 +36,7 @@ const AddToFavoritesButton = ({
 
   const handleOnClick = () => {
     mutation.mutate(episode);
-    if (announcement === "Episode removed") {
+    if (!isFavorite) {
       setAnnouncement("Episode Added");
     } else {
       setAnnouncement("Episode removed");
