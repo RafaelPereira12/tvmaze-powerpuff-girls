@@ -13,7 +13,7 @@ const ShowDetails = () => {
   if (isPending)
     return (
       <section aria-hidden="true">
-        <Spinner testId="spinner" interactionName="load" label="Loading" />;
+        <Spinner testId="spinner" interactionName="load" label="Loading" />
       </section>
     );
 
