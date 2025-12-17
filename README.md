@@ -47,7 +47,7 @@ app/
 ├── providers/               # TanStack Query provider  
 ├── test/                    # Unit tests  
 ├── utils/                   # Components Utility functions  
-data/                        # Mock DB for favorites  
+├──data/                     # Mock DB for favorites  
 ```
 
 
@@ -73,6 +73,10 @@ Development of a keyboard navigation script. While Atlassian Kit components alre
 
 **Search**\
 Research and development of a method to extend search criteria, for example, searching by name. Currently, the TVMaze API only allows searching for episodes by number or date.
+
+**Favorites**\
+Research and development of a method that uses the mock DB json file for the Favorites logic
+
 
 
 
