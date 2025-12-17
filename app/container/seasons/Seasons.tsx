@@ -1,7 +1,7 @@
 "use client";
 
 import Episode from "../episodes/Episode";
-import DropdownGroupItem from "../../common/DropdownGroupItem";
+import DropdownGroupItem from "../../common/dropdown-group-item/DropdownGroupItem";
 import Spinner from "@atlaskit/spinner";
 import { SeasonEpisodeProps, SeasonProps } from "./SeasonsTypes";
 import { useQuery } from "@tanstack/react-query";

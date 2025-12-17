@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Search from "../searchbar/Search";
+import Search from "../../common/searchbar/Search";
 import Image from "next/image";
 import logo from "../../assets/images/PageLogo.png";
 

@@ -1,8 +1,8 @@
 "use client";
-import Seasons from "../container/seasons/Seasons";
-import DropdownMenu from "../common/DropdownMenu";
-import DropdownGroup from "../common/DropdownGroup";
-import { getSeasons } from "../utils/EpisodeListUtils";
+import Seasons from "../seasons/Seasons";
+import DropdownMenu from "../../common/dropdpwn-menu/DropdownMenu";
+import DropdownGroup from "../../common/dropdown-group/DropdownGroup";
+import { getSeasons } from "../../utils/EpisodeListUtils";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "@atlaskit/spinner";
 

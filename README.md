@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**## Getting Started**
 
-## Getting Started
+Follow these steps to run the project locally.
 
-First, run the development server:
+**1. Install dependencies**\
+npm install
 
-```bash
+**2. Start the development server**\
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The application will run on http://localhost:3000 by default.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**3. Run tests**\
+npm run test
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+**## Architecture Decisions**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Component-based**\
+Components are ready to be reusable, and written with the intent of having a single responsibility.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Data fetching with TanStack Query**\
+Server state is managed through TanStack Query queries that provides caching, loading state, and error handling.
 
-## Deploy on Vercel
+**Client-side routing**\
+Routes are organized by page component folders that live inside the app folder. In order to support AppRouter dynamic routing patterns, page component folders may contain nested folders (Ex: episode-details > `[season]`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Testing** \
+Tests focus on user behavior using Vitest. (Had a lack of knowledge, but interest in trying and learning, which led to the use of AI to develop EpisodeDetails.test.ts, given that testing is not something that I feel comfortable to develop)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Folder structure**
+
+app/
+├── accessibility/           # Accessibility helpers (e.g., focus management)
+├── api/
+│   └── posts/               # Mock API routes
+├── assets/
+│   └── images/              # Static images
+├── base/                    # Shared layout components 
+├── common/                  # Reusable UI components 
+├── container/               # Page specific containers 
+├── episode-details/         # Episode Details page and related components
+├── favorites/               # Favorites page and related components
+├── search-result/           # Search Result page and related components
+├── providers/               # TanStack Query provider
+├── test/                    # Unit tests
+├── utils/                   # Components Utility functions
+data/                        # Mock DB for favorites
+
+
+
+**## Key Trade-offs**
+
+**TanStack Query vs manual state management**\
+Adds a dependency and learning curve but simplifies caching, loading, and error handling.
+
+**Client-side fetching** \
+Improves speed but may affect SEO and initial load performance.
+
+
+**## Improvements with More Time**
+
+**Accordion Component**\
+Development of an Accordion component to replace the Atlassian Kit [DropdownMenu](https://atlassian.design/components/dropdown-menu/examples), as it is better suited for displaying Seasons and their respective Episodes on the main page, enhancing the UI and user experience.
+
+**Expand testing**\
+Get a better and deeper understanding of testing, in order to develop unit tests for async functions, and component tests. Develop tests for core logic.
+
+**Accessibility Improvements**\
+Development of a keyboard navigation script. While Atlassian Kit components already support keyboard navigation, future components, such as the Accordion component, will require dedicated keyboard navigation instructions. 
+
+**Search**\
+Research and development of a method to extend search criteria, for example, searching by name. Currently, the TVMaze API only allows searching for episodes by number or date.
+
+
+
+
+

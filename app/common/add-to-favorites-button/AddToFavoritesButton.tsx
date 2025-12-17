@@ -1,8 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import {
-  createFavorite,
-  getFavorites,
-} from "../../utils/FavoritesUtils";
+import { createFavorite, getFavorites } from "../../utils/FavoritesUtils";
 import { AddToFavoriteProps } from "./AddToFavoritesTypes";
 import StarStarredIcon from "@atlaskit/icon/core/star-starred";
 import StarUnstarredIcon from "@atlaskit/icon/core/star-unstarred";
@@ -88,6 +85,8 @@ const AddToFavoritesButton = ({
               [&_span]:!sm:[font-size:var(--font-size-dropdown-mobile)] 
               [&_span]:!md:[font-size:var(--font-size-text-mobile)] 
               [&_span]:!lg:[font-size:var(--font-size-text-mobile)]
+              mb-6
+              lg:mb-0
               "
     >
       <Button
