@@ -1,5 +1,5 @@
 ##Deployed at\
-[View the app deployed] (https://6942d599055c899f18a4e0b9--mellow-youtiao-62f12b.netlify.app/episode-details/2/1)
+[View the app deployed](https://6942d599055c899f18a4e0b9--mellow-youtiao-62f12b.netlify.app/)
 
 ## Getting Started
 
