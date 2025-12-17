@@ -33,7 +33,7 @@ Tests focus on user behavior using Vitest. (Had a lack of knowledge, but interes
 **Folder structure**
 ```
 app/
-├── accessibility/           # Accessibility helpers (e.g., focus management)  
+├── accessibility/           # Accessibility helpers
 ├── api/  
 │   └── posts/               # Mock API routes  
 ├── assets/  
