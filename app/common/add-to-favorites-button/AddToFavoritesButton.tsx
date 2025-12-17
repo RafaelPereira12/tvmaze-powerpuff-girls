@@ -6,6 +6,8 @@ import StarUnstarredIcon from "@atlaskit/icon/core/star-unstarred";
 import Spinner from "@atlaskit/spinner";
 import { useState } from "react";
 import Button from "@atlaskit/button/new";
+import { useGlobalContext } from "@/app/context/GlobalContext";
+import { SeasonEpisodeProps } from "@/app/container/seasons/SeasonsTypes";
 
 const AddToFavoritesButton = ({
   id,
@@ -17,40 +19,24 @@ const AddToFavoritesButton = ({
   const episode = { id, image, name, number, season };
   const [announcement, setAnnouncement] = useState("");
   const queryClient = useQueryClient();
+  const {favorites, AddToFavorites, DeleteFromFavorites} = useGlobalContext();
 
-  const { data, isPending, error } = useQuery({
-    queryKey: ["favorites"],
-    queryFn: getFavorites,
-  });
 
-  const isFavorite = data?.some(
+
+  const isFavorite = favorites?.some(
     (favorite: AddToFavoriteProps) => favorite.id === episode.id
   );
 
-  const mutation = useMutation({
-    mutationFn: createFavorite,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["favorites"] });
-    },
-  });
 
   const handleOnClick = () => {
-    mutation.mutate(episode);
     if (!isFavorite) {
+      AddToFavorites(episode)
       setAnnouncement("Episode Added");
     } else {
+      DeleteFromFavorites(episode)
       setAnnouncement("Episode removed");
     }
   };
-
-  if (isPending)
-    return (
-      <section aria-hidden="true">
-        <Spinner testId="spinner" interactionName="load" label="Loading" />
-      </section>
-    );
-
-  if (error) return "An error has occurred: " + error.message;
 
   if (isFavorite)
     return (

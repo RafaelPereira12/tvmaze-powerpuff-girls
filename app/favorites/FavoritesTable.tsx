@@ -1,31 +1,17 @@
 "use client";
 
-import { SeasonEpisodeProps } from "../container/seasons/SeasonsTypes";
 import Link from "next/link";
 import Episode from "../container/episodes/Episode";
-import { getFavorites } from "../utils/FavoritesUtils";
-import { useQuery } from "@tanstack/react-query";
-import Spinner from "@atlaskit/spinner";
+import { useGlobalContext } from "../context/GlobalContext";
+import { AddToFavoriteProps } from "../common/add-to-favorites-button/AddToFavoritesTypes";
 
 const FavoritesTable = () => {
-  const { isPending, error, data } = useQuery({
-    queryKey: ["favorites"],
-    queryFn: () => getFavorites(),
-  });
-
-  if (isPending)
-    return (
-      <section aria-hidden="true">
-        <Spinner testId="spinner" interactionName="load" label="Loading" />
-      </section>
-    );
-
-  if (error) return "An error has occurred: " + error.message;
-
-  if (data.length === 0) return <h5>Add episodes to your favorites list</h5>;
+  const {favorites} = useGlobalContext();
+ 
+  if (favorites.length === 0) return <h5>Add episodes to your favorites list</h5>;
   return (
     <section className="flow-col bg-gray-100 w-[100%] md:w-[80%] p-6 rounded-[5px] [&_article]:justify-center items-end">
-      {data.map((episode: SeasonEpisodeProps) => {
+      {favorites.map((episode: AddToFavoriteProps) => {
         return (
           <section className=" mb-2 hover:bg-gray-300" key={episode.id}>
             <Link

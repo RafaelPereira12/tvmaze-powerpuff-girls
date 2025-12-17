@@ -4,9 +4,9 @@ import { EpisodeProps } from "./EpisodeTypes";
 
 
 const Episode = ({ image, number, name }: EpisodeProps) => {
+  console.log('image: ', image);
   return (
     <section
-    // aria-label={`Episode ${number} ${name}`}
       className="grid
                  grid-cols-[1fr]
                  grid-rows-[fr_1fr]
