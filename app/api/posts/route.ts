@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import path from "path";
 
 export async function GET() {
- const filePath = path.join(process.cwd(), "data", "posts.json");
+ const filePath = path.join("data", "posts.json");
   let posts = [];
 
   try {
@@ -18,7 +18,7 @@ export async function GET() {
 
 export async function POST(req: Request) {
   const newPost = await req.json();
-  const filePath = path.join(process.cwd(), "data", "posts.json");
+  const filePath = path.join("data", "posts.json");
   const fileData = await fs.readFile(filePath, "utf8");
   const posts = JSON.parse(fileData);
   const existsInFavorites = posts.find(
