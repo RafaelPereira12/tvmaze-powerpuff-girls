@@ -1,7 +1,5 @@
 "use client"
 
-import { json } from "stream/consumers";
-import { EpisodeProps } from "../container/episodes/EpisodeTypes";
 import { AddToFavoriteProps } from "../common/add-to-favorites-button/AddToFavoritesTypes";
 
 export const getFavorites = async () => {

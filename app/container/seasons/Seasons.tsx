@@ -5,7 +5,7 @@ import DropdownGroupItem from "../../common/DropdownGroupItem";
 import Spinner from "@atlaskit/spinner";
 import { SeasonEpisodeProps, SeasonProps } from "./SeasonsTypes";
 import { useQuery } from "@tanstack/react-query";
-import { getEpisodes } from "./SeasonsServerFunctions";
+import { getEpisodes } from "../../utils/SeasonsUtils";
 
 const Seasons = ({ seasonId }: SeasonProps) => {
   const { isPending, error, data } = useQuery({

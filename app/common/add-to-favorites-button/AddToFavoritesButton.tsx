@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   createFavorite,
   getFavorites,
-} from "../../favorites/FavoritesServerFunctions";
+} from "../../utils/FavoritesUtils";
 import { AddToFavoriteProps } from "./AddToFavoritesTypes";
 import StarStarredIcon from "@atlaskit/icon/core/star-starred";
 import StarUnstarredIcon from "@atlaskit/icon/core/star-unstarred";
