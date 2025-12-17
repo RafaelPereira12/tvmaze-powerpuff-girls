@@ -1,4 +1,4 @@
-**## Getting Started**
+## Getting Started
 
 Follow these steps to run the project locally.
 
@@ -15,7 +15,8 @@ The application will run on http://localhost:3000 by default.
 npm run test
 
 
-**## Architecture Decisions**
+
+## Architecture Decisions
 
 **Component-based**\
 Components are ready to be reusable, and written with the intent of having a single responsibility.
@@ -30,27 +31,27 @@ Routes are organized by page component folders that live inside the app folder. 
 Tests focus on user behavior using Vitest. (Had a lack of knowledge, but interest in trying and learning, which led to the use of AI to develop EpisodeDetails.test.ts, given that testing is not something that I feel comfortable to develop)
 
 **Folder structure**
-
+```
 app/
-├── accessibility/           # Accessibility helpers (e.g., focus management)
-├── api/
-│   └── posts/               # Mock API routes
-├── assets/
-│   └── images/              # Static images
-├── base/                    # Shared layout components 
-├── common/                  # Reusable UI components 
-├── container/               # Page specific containers 
-├── episode-details/         # Episode Details page and related components
-├── favorites/               # Favorites page and related components
-├── search-result/           # Search Result page and related components
-├── providers/               # TanStack Query provider
-├── test/                    # Unit tests
-├── utils/                   # Components Utility functions
-data/                        # Mock DB for favorites
+├── accessibility/           # Accessibility helpers (e.g., focus management)  
+├── api/  
+│   └── posts/               # Mock API routes  
+├── assets/  
+│   └── images/              # Static images  
+├── base/                    # Shared layout components   
+├── common/                  # Reusable UI components   
+├── container/               # Page specific containers   
+├── episode-details/         # Episode Details page and related components  
+├── favorites/               # Favorites page and related components  
+├── search-result/           # Search Result page and related components  
+├── providers/               # TanStack Query provider  
+├── test/                    # Unit tests  
+├── utils/                   # Components Utility functions  
+data/                        # Mock DB for favorites  
+```
 
 
-
-**## Key Trade-offs**
+## Key Trade-offs
 
 **TanStack Query vs manual state management**\
 Adds a dependency and learning curve but simplifies caching, loading, and error handling.
@@ -59,7 +60,7 @@ Adds a dependency and learning curve but simplifies caching, loading, and error 
 Improves speed but may affect SEO and initial load performance.
 
 
-**## Improvements with More Time**
+## Improvements with More Time
 
 **Accordion Component**\
 Development of an Accordion component to replace the Atlassian Kit [DropdownMenu](https://atlassian.design/components/dropdown-menu/examples), as it is better suited for displaying Seasons and their respective Episodes on the main page, enhancing the UI and user experience.
