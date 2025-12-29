@@ -5,21 +5,15 @@ import ImageIcon from "@atlaskit/icon/core/image";
 import { EpisodeDetailsProps } from "./EpisodeDetailsTypes";
 import { useQuery } from "@tanstack/react-query";
 import { getEpisodeDetails } from "../utils/EpisodeDetailsUtils";
-import Spinner from "@atlaskit/spinner";
 import AddToFavoritesButton from "../common/add-to-favorites-button/AddToFavoritesButton";
 
 const EpisodeDetails = ({ season, number }: EpisodeDetailsProps) => {
-  const { isPending, error, data } = useQuery({
+  const { error, data } = useQuery({
     queryKey: ["show details"],
     queryFn: () => getEpisodeDetails(season, number),
   });
 
-  if (isPending)
-    return (
-      <section aria-hidden="true">
-        <Spinner testId="spinner" interactionName="load" label="Loading" />
-      </section>
-    );
+
 
   if (error) return "An error has occurred: " + error.message;
   return (

@@ -2,23 +2,17 @@
 
 import Episode from "../episodes/Episode";
 import DropdownGroupItem from "../../common/dropdown-group-item/DropdownGroupItem";
-import Spinner from "@atlaskit/spinner";
 import { SeasonEpisodeProps, SeasonProps } from "./SeasonsTypes";
 import { useQuery } from "@tanstack/react-query";
 import { getEpisodes } from "../../utils/SeasonsUtils";
 
 const Seasons = ({ seasonId }: SeasonProps) => {
-  const { isPending, error, data } = useQuery({
+  const { error, data } = useQuery({
     queryKey: ["episodes"],
     queryFn: () => getEpisodes(seasonId),
   });
 
-  if (isPending)
-    return (
-      <section aria-hidden="true">
-        <Spinner testId="spinner" interactionName="load" label="Loading" />
-      </section>
-    );
+
 
   if (error) return "An error has occurred: " + error.message;
 

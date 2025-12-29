@@ -6,6 +6,8 @@ import "./globals.css";
 import Footer from "./base/footer/Footer";
 import FocusElementOnNavigation from "./accessibility/FocusElementOnNavigation";
 import { GlobalProvider } from "./context/GlobalContext";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +39,9 @@ export default function RootLayout({
         <TanstackProvider>
           <FocusElementOnNavigation/>
           <Navbar />
+          <Suspense fallback={<Loading />}>
           {children}
+          </Suspense>
           <Footer />
         </TanstackProvider>
         </GlobalProvider>

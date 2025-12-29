@@ -3,23 +3,17 @@
 import { getEpisodes } from "../utils/SeasonsUtils";
 import { SearchResultProps } from "./SearchResultTypes";
 import { useQuery } from "@tanstack/react-query";
-import Spinner from "@atlaskit/spinner";
 import { SeasonEpisodeProps } from "../container/seasons/SeasonsTypes";
 import Episode from "../container/episodes/Episode";
 import Link from "next/link";
 
 const SearchResultTable = ({ seasonNumber }: SearchResultProps) => {
   const matchSeasonId = 7072; //Try to find a better way to match the show real Id
-  const { isPending, error, data } = useQuery({
+  const {error, data } = useQuery({
     queryKey: ["episodes"],
     queryFn: () => getEpisodes(seasonNumber + matchSeasonId),
   });
-  if (isPending)
-    return (
-      <section aria-hidden="true">
-        <Spinner testId="spinner" interactionName="load" label="Loading" />
-      </section>
-    );
+ 
   if (error) return "An error has occurred: " + error.message;
 
   return (

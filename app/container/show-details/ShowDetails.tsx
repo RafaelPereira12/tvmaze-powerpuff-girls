@@ -3,19 +3,13 @@
 import Image from "next/image";
 import { getShowDetails } from "../../utils/ShowDetailsUtils";
 import { useQuery } from "@tanstack/react-query";
-import Spinner from "@atlaskit/spinner";
 
 const ShowDetails = () => {
-  const { isPending, error, data } = useQuery({
+  const {  error, data } = useQuery({
     queryKey: ["show details"],
     queryFn: () => getShowDetails(),
   });
-  if (isPending)
-    return (
-      <section aria-hidden="true">
-        <Spinner testId="spinner" interactionName="load" label="Loading" />
-      </section>
-    );
+ 
 
   if (error) return "An error has occurred: " + error.message;
   return (

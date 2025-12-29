@@ -4,20 +4,14 @@ import DropdownMenu from "../../common/dropdpwn-menu/DropdownMenu";
 import DropdownGroup from "../../common/dropdown-group/DropdownGroup";
 import { getSeasons } from "../../utils/EpisodeListUtils";
 import { useQuery } from "@tanstack/react-query";
-import Spinner from "@atlaskit/spinner";
 
 const EpisodeList = () => {
-  const { isPending, error, data } = useQuery({
+  const { error, data } = useQuery({
     queryKey: ["seasons"],
     queryFn: () => getSeasons(),
   });
 
-  if (isPending)
-    return (
-      <section aria-hidden="true">
-        <Spinner testId="spinner" interactionName="load" label="Loading" />
-      </section>
-    );
+
 
   if (error) return "An error has occurred: " + error.message;
 
