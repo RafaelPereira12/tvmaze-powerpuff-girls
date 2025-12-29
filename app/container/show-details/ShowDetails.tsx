@@ -5,10 +5,12 @@ import { getShowDetails } from "../../utils/ShowDetailsUtils";
 import { useQuery } from "@tanstack/react-query";
 
 const ShowDetails = () => {
-  const {  error, data } = useQuery({
+  const {isPending,  error, data } = useQuery({
     queryKey: ["show details"],
     queryFn: () => getShowDetails(),
   });
+
+  if(isPending) return <h1>Loading</h1>
  
 
   if (error) return "An error has occurred: " + error.message;

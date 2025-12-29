@@ -8,7 +8,7 @@ import { getEpisodes } from "../../utils/SeasonsUtils";
 
 const Seasons = ({ seasonId }: SeasonProps) => {
   const { error, data } = useQuery({
-    queryKey: ["episodes"],
+    queryKey: [`episodes ${seasonId}`],
     queryFn: () => getEpisodes(seasonId),
   });
 

@@ -6,12 +6,12 @@ import { getSeasons } from "../../utils/EpisodeListUtils";
 import { useQuery } from "@tanstack/react-query";
 
 const EpisodeList = () => {
-  const { error, data } = useQuery({
-    queryKey: ["seasons"],
+  const {error, data } = useQuery({
+    queryKey: [`season `],
     queryFn: () => getSeasons(),
   });
 
-
+ 
 
   if (error) return "An error has occurred: " + error.message;
 

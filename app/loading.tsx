@@ -1,3 +1,5 @@
+"use client" 
+
 import Spinner from '@atlaskit/spinner'
 
 const loading = () => {
